@@ -1,254 +1,374 @@
 import streamlit as st
 
-# Configuração da página principal
-st.set_page_config(page_title="Portfólio - Débora Ferreira", layout="wide", page_icon="💼")
 
-# Menu lateral com as seções
-menu = st.sidebar.radio("📂 Seções do Portfólio", [
-    "👋 Apresentação",
-    "🌐 Sistemas de Informação (MXM)",
-    "📑 Geração de Relatórios (Excel → Word)",
-    "📊 Excel para .TXT (TransformaX)",
-    "🔐 Gerador de Senhas",
-    "⚙️ Automação com Plataforma No-Code",
-    "🧭 Revisão de ERP",
-    "📊 Projeto Cxodiugo - LSTM + MT5",
-    "🎬 Edição de Vídeos",
-    "📫 Contato"
-])
-
-# SEÇÃO 1 - Apresentação
-if menu == "👋 Apresentação":
-    col1, col2 = st.columns([2, 4])
-
-    with col1:
-        st.image("image.png", width=350, caption="Débora Ferreira")
-
-    with col2:
-        st.markdown("""
-                Olá! Meu nome é **Débora Ferreira** e este é meu portfólio de projetos desenvolvidos.  
-                Tenho experiência em **tecnologia, automação, análise de dados e criação de soluções práticas** com ferramentas como Python, Streamlit, Excel e plataformas no-code.
-
-                ---
-
-                ### 👩‍💻 Sobre Mim
-                - 🎓 Graduanda em **Sistemas de Informação** pela Universidade Federal Fluminense (UFF)  
-                - 💼 Experiência em QA, Backend Python, automação de tarefas e gestão de projetos  
-                - 🤝 Colaborei em empresas como **MXM**, **Storm Group** e **IN Jr - UFF**  
-                - 🧪 Também atuei em projeto de Iniciação Científica com **desenvolvimento mobile em Dart**
-
-                ---
-
-                ### 💼 Experiência Resumida
-
-                **MXM (2023 – atual)**  
-                *Analista de Testes – QA*  
-                Testes e automação com Python em sistemas ERP
-
-                **Storm Group (2021 – 2023)**  
-                *Desenvolvedora Backend Python*  
-                Chalice, testes BDD, S3, Git, Clean Architecture, SOLID, CRUDs
-
-                **IN Jr – UFF (2020 – 2021)**  
-                *Backend Ruby & RH*  
-                CRUDs, gestão de times, recrutamento e acompanhamento de projetos
-
-                **Projeto IC – UFF (2019)**  
-                *Desenvolvedora Dart*  
-                App para cálculo de dosagens médicas usado por enfermeiros do HU
-
-                ---
-
-                ### 🧩 Projetos em Destaque
-                - 🌐 Apresentação Interativa sobre **Sistemas de Informação**
-                - 🔄 Transformação de dados com Excel (.xlsx → .txt)
-                - 📑 Geração automática de **relatórios a partir de planilhas**
-                - 🔐 Gerador de **senhas seguras** com critérios personalizados
-                - ⚙️ Automação de tarefas com ferramentas **No-Code**
-                - 🧭 Revisão de telas e módulos ERP para **otimização de processos**
-                - 📊 Projeto Cxodiugo – LSTM + Simulação MT5 (Google Colab)
-                - 🎥 Edição e produção de vídeos
-
-                ---
-
-                Sinta-se à vontade para explorar cada projeto usando o menu lateral! 👈
-                """)
+st.set_page_config(
+    page_title="Portfolio - Débora Ferreira",
+    page_icon="✨",
+    layout="wide",
+)
 
 
-# SEÇÃO 2 - Projeto MXM Sistemas
-elif menu == "🌐 Sistemas de Informação (MXM)":
-    st.title("🔷 Projeto Acadêmico: MXM Sistemas")
-    st.markdown("Este projeto foi desenvolvido como parte de um trabalho acadêmico sobre Sistemas de Informação.")
-    st.markdown("➡️ O conteúdo completo da apresentação está [aqui](https://mxm-apresentacao-jhg2aotnt9xbqptnk2vmqe.streamlit.app/) ou confira abaixo:")
-
-    # Você pode colar aqui a mesma estrutura que usou no seu app da MXM (como você já fez)
-    st.markdown("Usei **Streamlit, Matplotlib e Plotly** para tornar o conteúdo mais interativo.")
-    st.markdown("> **Tópicos abordados:** Introdução a SI, tipos de sistemas, modelo de negócio da MXM, Forças de Porter, soluções tecnológicas e localização das sedes.")
-
-# SEÇÃO 3 - Geração de Relatórios (Excel → Word)
-elif menu == "📑 Geração de Relatórios (Excel → Word)":
-    st.header("📑 Geração de Relatórios a partir de Excel")
-    st.markdown("""
-        Esse projeto permite gerar relatórios automáticos em formato `.docx` com base em dados de uma planilha do Excel.
-
-        **Principais funcionalidades:**
-        - 📊 Leitura e processamento de dados em Excel
-        - 🧾 Geração de relatórios personalizados em Word com Python
-        - 🧠 Uso da biblioteca `python-docx` para formatação dos documentos
-        - 💡 Ideal para automatizar relatórios mensais, contratos, certificados, etc.
-
-        **Exemplo de uso:**  
-        Uma planilha com informações de clientes pode gerar automaticamente um contrato em Word para cada um, poupando horas de trabalho manual.
-
-        🔗 [Ver projeto no GitHub](https://github.com/seu-usuario/seu-repositorio)  
-        📄 [Baixar modelo de relatório Word](https://drive.google.com/file/d/SEU_ID_AQUI/view?usp=sharing)
-        """)
-
-# SEÇÃO 4 - Excel para TXT (TransformaX)
-elif menu == "📊 Excel para .TXT (TransformaX)":
-    st.title("📊 TransformaX - Conversor de Excel para .TXT")
-    st.markdown("""
-    Este projeto automatiza a conversão de arquivos Excel para o formato `.txt`, muito útil em sistemas que exigem layouts específicos para integração (como fiscais ou contábeis).
-
-    **Principais Funcionalidades:**
-    - 📥 Upload de arquivos `.xlsx`
-    - 📄 Escolha de colunas específicas
-    - 🔁 Formatação automatizada do conteúdo
-    - 📤 Geração de arquivo `.txt` pronto para envio
-
-    🛠️ Desenvolvido com: `pandas`, `openpyxl`, `Python padrão`
-    🔗 [Ver projeto no GitHub](https://github.com/seu-usuario/seu-repositorio)  
-
-    """)
-
-    st.code("""
-        import pandas as pd
-
-        df = pd.read_excel('dados.xlsx')
-        df.to_csv('saida.txt', sep='|', index=False)
-            """, language="python")
-
-# SEÇÃO 5 - Gerador de Senhas
-elif menu == "🔐 Gerador de Senhas":
-    st.title("🔐 Gerador de Senhas Seguras")
-    st.markdown("""
-    Ferramenta simples e útil para gerar senhas aleatórias com critérios de segurança.
-
-    **Características:**
-    - Geração com letras, números e símbolos
-    - Personalização de tamanho
-    - Fácil cópia para área de transferência
-
-    🛠️ Feito com `Python` e `random`
-    🔗 [Ver projeto no GitHub](https://github.com/seu-usuario/seu-repositorio)  
-
-    """)
-
-    st.code("""
-        import random
-        import string
-
-        def gerar_senha(tamanho=12):
-            chars = string.ascii_letters + string.digits + string.punctuation
-            return ''.join(random.choice(chars) for _ in range(tamanho))
-            """, language="python")
-
-# SEÇÃO 6 - Automação com No-Code
-elif menu == "⚙️ Automação com Plataforma No-Code":
-    st.title("⚙️ Automação com Plataforma No-Code")
-    st.markdown("""
-    Automatizei tarefas repetitivas usando uma plataforma no-code, como o **Make (Integromat)** ou **Zapier**.
-
-    **Exemplo de processo automatizado:**
-    - Receber formulário do cliente
-    - Criar tarefa em ferramenta de gestão
-    - Notificar equipe via Slack/Email
-
-    **Impacto:**
-    - Economia de tempo
-    - Redução de erros
-    - Padronização de processos
-
-    🧩 Usei lógica condicional, webhooks e integração com APIs.
-    🔗 [Ver projeto no GitHub](https://github.com/seu-usuario/seu-repositorio)  
-
-    """)
-
-# SEÇÃO 7 - Revisão de ERP
-elif menu == "🧭 Revisão de ERP":
-    st.header("🧭 Revisão de Telas e Módulos de ERP")
-    st.markdown("""
-    Projeto focado na **análise de usabilidade e fluxo de módulos de um sistema ERP**.
-
-    Atividades realizadas:
-    - Mapeamento das telas utilizadas em cada área do ERP (financeiro, estoque, RH, etc.)
-    - Análise crítica de **layout, agrupamento de informações e redundâncias**
-    - Propostas de melhoria de navegação e UX
-    - Sugestões de **padronização visual entre os módulos**
-
-    O objetivo foi melhorar a **eficiência dos usuários** no uso diário do sistema e otimizar o tempo de operação.
-
-    Ferramentas utilizadas:
-    - Inspeção visual e testes manuais no sistema
-    - Documentação de fluxo com diagramas (Ex: Draw.io, Figma)
-    """)
-
-# SEÇÃO 8 - Edição de Vídeos
-elif menu == "🎬 Edição de Vídeos":
-    st.title("🎬 Projetos de Edição de Vídeo")
-    st.markdown("""
-    Além de projetos técnicos, também atuo na edição de vídeos, criando conteúdos para redes sociais, apresentações e vídeos institucionais.
-
-    **Softwares usados:**
-    - 🎞️ CapCut
-    - 🎬 Adobe Premiere
-    - 🧠 IA para voz/sincronização (opcional)
-
-    👉 Confira alguns dos meus vídeos:
-    - [Vídeo 1 - Produto](https://youtu.be/03qPtQGD3OU)
-    - [Vídeo 2 - Reels](https://www.youtube.com/shorts/GLjBNQwqYPk)
-    """)
+PROJECTS = [
+    {
+        "icon": "🌐",
+        "title": "Apresentação MXM Sistemas",
+        "subtitle": "Trabalho acadêmico interativo com Streamlit",
+        "stack": "Streamlit | Plotly | Matplotlib",
+        "impact": "Conecta teoria de SI com análise de negócio e visualização de dados.",
+        "link": "https://mxm-apresentacao-jhg2aotnt9xbqptnk2vmqe.streamlit.app/",
+    },
+    {
+        "icon": "📑",
+        "title": "Geração de Relatórios",
+        "subtitle": "Excel para Word automatizado",
+        "stack": "Python | python-docx | pandas",
+        "impact": "Reduz tempo manual na criação de contratos, laudos e relatórios.",
+        "link": "https://github.com/debsk/Gera-o-de-Relat-rios-Excel-Word-",
+    },
+    {
+        "icon": "📊",
+        "title": "TransformaX",
+        "subtitle": "Conversor de .xlsx para .txt",
+        "stack": "Python | pandas | openpyxl",
+        "impact": "Prepara arquivos para integrações fiscais e contábeis com padrão.",
+        "link": "https://github.com/debsk/TransformaX",
+    },
+    {
+        "icon": "⚙️",
+        "title": "Automação No-Code",
+        "subtitle": "Fluxos inteligentes com Orange",
+        "stack": "No-code | APIs | Webhooks",
+        "impact": "Acelera operações e diminui erros em tarefas repetitivas.",
+    },
+    {
+        "icon": "🧭",
+        "title": "Revisão de ERP",
+        "subtitle": "Mapeamento e melhoria de usabilidade",
+        "stack": "QA | UX | Processos",
+        "impact": "Melhora navegação e produtividade em módulos críticos.",
+        "link": "https://github.com/debsk/Abertura-de-telas-ERP",
+    },
+    {
+        "icon": "🧠",
+        "title": "Cxodiugo Bot",
+        "subtitle": "LSTM + Attention para séries temporais",
+        "stack": "Deep Learning | sklearn | pandas",
+        "impact": "Explora previsão financeira com abordagem de IA aplicada.",
+        "link": "https://github.com/debsk/cxodiugo-bot",
+    },
+    {
+        "icon": "🎬",
+        "title": "Edição de Vídeos",
+        "subtitle": "Conteúdo para social e institucional",
+        "stack": "CapCut | Premiere | Criação",
+        "impact": "Entrega narrativa visual para produtos, campanhas e marca.",
+        "links": [
+            {"label": "Video 1", "url": "https://youtu.be/03qPtQGD3OU"},
+            {"label": "Video 2", "url": "https://www.youtube.com/shorts/GLjBNQwqYPk"},
+        ],
+    },
+]
 
 
-# SEÇÃO 9 - Projeto Cxodiugo com Google Colab
-elif menu == "📊 Projeto Cxodiugo - LSTM + MT5":
-    st.title("📊 Projeto Cxodiugo - Análise com LSTM + Simulação MT5 (Google Colab)")
-    st.markdown("""
-    Este projeto é uma simulação de coleta e análise de dados de mercado inspirada no MetaTrader 5 (MT5),  
-    com um modelo de previsão usando **LSTM com Attention**, desenvolvido inteiramente em **Google Colab**.
+def render_project_links(project: dict) -> None:
+    links = project.get("links")
+    if links:
+        for item in links:
+            render_link(item["label"], item["url"])
+        return
 
-    O notebook permite:
-    - 📈 **Simular dados de mercado como se fossem coletados via MT5**
-    - ⚙️ **Treinar um modelo de séries temporais (LSTM com Attention)**
-    - 🧠 Utilizar bibliotecas como `TensorFlow`, `pandas`, `seaborn`, `matplotlib` para análise
-    - ✅ Rodar tudo direto no navegador, sem instalação local
+    link = project.get("link")
+    if link:
+        render_link("Abrir projeto", link)
 
-    **Destaques técnicos:**
-    - Uso de `LSTM` para prever séries temporais financeiras
-    - Aplicação de mecanismo de **Attention** para identificar padrões importantes
-    - Dados simulados para contornar limitações de execução do MT5 no Colab
 
-    🔗 [Abrir projeto no Google Colab](https://colab.research.google.com/drive/17BIPMJTm66GNmQbEmUFrATaa7vth2foS#scrollTo=FfghqukOGU-s)  
+def render_link(label: str, url: str) -> None:
+    st.markdown(
+        f'<a class="cta-link" href="{url}" target="_blank" rel="noopener noreferrer">{label}</a>',
+        unsafe_allow_html=True,
+    )
 
-    ---
-    #### ⚙️ Instalação de dependências (automática no Colab):
-    ```bash
-    !pip install pandas numpy matplotlib seaborn tensorflow
-    ```
 
-    ---
-    💬 *Este projeto demonstra como aplicar Deep Learning para análise financeira mesmo em ambientes limitados como o Colab.*
-    """)
+def inject_style() -> None:
+    st.markdown(
+        """
+        <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Space+Grotesk:wght@400;500;700&display=swap');
 
-# SEÇÃO 10 - Contato
-elif menu == "📫 Contato":
-    st.title("📫 Fale comigo")
-    st.markdown("""
-    Ficou interessado em algum projeto? Quer conversar sobre uma ideia?
+        :root {
+            --bg-1: #fff5e8;
+            --bg-2: #ffd7b5;
+            --ink: #1f1a17;
+            --accent: #e85d04;
+            --accent-2: #0f4c5c;
+            --card: rgba(255,255,255,0.78);
+            --line: rgba(15, 76, 92, 0.24);
+        }
 
-    - 📧 **Email**: deborabf@id.uff.br  
-    - 💼 [LinkedIn](https://www.linkedin.com/in/débora-barbosa-1a0179193)  
-    - 🧑‍💻 [GitHub](https://github.com/debsk)
+        .stApp {
+            background:
+                radial-gradient(circle at 8% 4%, rgba(255, 148, 92, 0.34), transparent 26%),
+                radial-gradient(circle at 92% 10%, rgba(15, 76, 92, 0.16), transparent 30%),
+                linear-gradient(145deg, var(--bg-1), var(--bg-2));
+            color: var(--ink);
+            font-family: 'Space Grotesk', sans-serif;
+        }
 
-    Obrigado pela visita! 👋
-    """)
+        section[data-testid="stSidebar"] {
+            background: linear-gradient(180deg, #0f4c5c 0%, #124559 100%);
+            border-right: 1px solid rgba(255,255,255,0.14);
+        }
+
+        section[data-testid="stSidebar"] * {
+            color: #f8f8f8 !important;
+        }
+
+        section[data-testid="stSidebar"] .material-symbols-rounded,
+        section[data-testid="stSidebar"] .material-icons {
+            font-family: "Material Symbols Rounded", "Material Icons" !important;
+        }
+
+        .hero {
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            padding: 1.4rem 1.6rem;
+            background: linear-gradient(140deg, rgba(255,255,255,0.8), rgba(255,255,255,0.52));
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
+            animation: rise 0.7s ease-out;
+        }
+
+        .hero h1 {
+            margin: 0;
+            color: var(--accent-2);
+            font-size: clamp(2rem, 3.2vw, 3.1rem);
+            font-family: 'DM Serif Display', serif;
+            line-height: 1.08;
+        }
+
+        .hero p {
+            margin: 0.7rem 0 0 0;
+            font-size: 1.03rem;
+            max-width: 62ch;
+        }
+
+        .chipline {
+            margin-top: 0.75rem;
+            font-size: 0.92rem;
+            color: #3a3a3a;
+            letter-spacing: 0.2px;
+        }
+
+        .project-card {
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 1rem 1rem 0.9rem 1rem;
+            background: var(--card);
+            box-shadow: 0 9px 24px rgba(0, 0, 0, 0.08);
+            margin-bottom: 0.9rem;
+            transition: transform 0.22s ease;
+            animation: rise 0.6s ease-out;
+        }
+
+        .project-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .project-card h3 {
+            margin: 0;
+            color: var(--accent-2);
+            font-size: 1.18rem;
+            font-family: 'DM Serif Display', serif;
+        }
+
+        .project-card .subtitle {
+            margin-top: 0.3rem;
+            font-size: 0.95rem;
+            color: #2e2a27;
+        }
+
+        .project-card .meta {
+            margin-top: 0.55rem;
+            color: #4a4541;
+            font-size: 0.9rem;
+        }
+
+        .kpi {
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            padding: 0.85rem 0.9rem;
+            background: rgba(255,255,255,0.7);
+            text-align: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .kpi .num {
+            font-size: 1.35rem;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .kpi .txt {
+            font-size: 0.86rem;
+            color: #34312f;
+        }
+
+        .cta-link {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background: linear-gradient(90deg, #0f4c5c, #16697a);
+            color: #ffffff !important;
+            text-decoration: none !important;
+            padding: 0.62rem 0.8rem;
+            border-radius: 10px;
+            font-weight: 600;
+            margin: 0.35rem 0 0.8rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: filter 0.2s ease;
+        }
+
+        .cta-link:hover {
+            filter: brightness(1.08);
+        }
+
+        @keyframes rise {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+def hero() -> None:
+    st.markdown(
+        """
+        <div class="hero">
+            <h1>Débora Ferreira</h1>
+            <p>
+                Portfólio de projetos com foco em automação, dados e desenvolvimento de soluções práticas.
+                Aqui você encontra trabalhos em Python, Streamlit, QA e projetos orientados a resultado.
+            </p>
+            <div class="chipline">Python • Streamlit • QA • Automação • Dados • Produto</div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+def home_section() -> None:
+    pic_col, hero_col = st.columns([1, 2.4])
+    with pic_col:
+        st.image("image.png", use_container_width=True, caption="Débora Ferreira")
+    with hero_col:
+        hero()
+
+    st.write("")
+
+    left, right = st.columns([2.2, 1])
+    with left:
+        st.markdown("### Projetos em destaque")
+
+        for project in PROJECTS[:4]:
+            st.markdown(
+                f"""
+                <div class="project-card">
+                    <h3>{project['icon']} {project['title']}</h3>
+                    <div class="subtitle">{project['subtitle']}</div>
+                    <div class="meta"><b>Stack:</b> {project['stack']}</div>
+                    <div class="meta">{project['impact']}</div>
+                </div>
+                """,
+                unsafe_allow_html=True,
+            )
+            render_project_links(project)
+
+    with right:
+        st.markdown("### Números")
+        st.markdown('<div class="kpi"><div class="num">7+</div><div class="txt">Projetos ativos</div></div>', unsafe_allow_html=True)
+        st.markdown('<div class="kpi"><div class="num">3</div><div class="txt">Áreas principais: QA, Dados e Automação</div></div>', unsafe_allow_html=True)
+        st.markdown('<div class="kpi"><div class="num">100%</div><div class="txt">Foco em solução prática</div></div>', unsafe_allow_html=True)
+        render_link("LinkedIn", "https://www.linkedin.com/in/débora-barbosa-1a0179193")
+        render_link("GitHub", "https://github.com/debsk")
+
+
+def projects_section() -> None:
+    st.markdown("## Projetos")
+    st.caption("Links diretos para seus projetos e entregas")
+
+    cols = st.columns(2)
+    for idx, project in enumerate(PROJECTS):
+        with cols[idx % 2]:
+            st.markdown(
+                f"""
+                <div class="project-card">
+                    <h3>{project['icon']} {project['title']}</h3>
+                    <div class="subtitle">{project['subtitle']}</div>
+                    <div class="meta"><b>Tecnologias:</b> {project['stack']}</div>
+                    <div class="meta">{project['impact']}</div>
+                </div>
+                """,
+                unsafe_allow_html=True,
+            )
+            links = project.get("links")
+            if links:
+                for item in links:
+                    render_link(item["label"], item["url"])
+            elif project.get("link"):
+                render_link("Ver link", project["link"])
+
+
+def about_section() -> None:
+    st.markdown("## Sobre mim")
+    st.markdown(
+        """
+        Sou graduanda em Sistemas de Informação pela UFF, com experiência em QA, backend Python,
+        automação de processos e melhoria contínua de produtos.
+
+        Minha proposta é simples: transformar tarefas manuais em fluxos mais inteligentes,
+        com ganho de velocidade, padronização e confiabilidade.
+        """
+    )
+
+    st.markdown("### Experiência")
+    st.markdown(
+        """
+        - MXM (2023 - atual): Analista de Testes (QA) com foco em ERP e automação com Python.
+        - Storm Group (2021 - 2023): Desenvolvimento backend Python, testes BDD e boas práticas de arquitetura.
+        - IN Jr UFF (2020 - 2021): Backend e gestão de equipes/projetos.
+        - Projeto de IC UFF (2019): App em Dart para dosagens médicas.
+        """
+    )
+
+
+def contact_section() -> None:
+    st.markdown("## Contato")
+    st.markdown("Vamos conversar sobre projetos, automação e tecnologia?")
+    st.markdown("- Email: deborabf@id.uff.br")
+    st.markdown("- LinkedIn: https://www.linkedin.com/in/débora-barbosa-1a0179193")
+    st.markdown("- GitHub: https://github.com/debsk")
+
+
+inject_style()
+
+st.sidebar.markdown("## Navegação")
+menu = st.sidebar.radio(
+    "Escolha uma seção",
+    ["Início", "Projetos", "Sobre", "Contato"],
+)
+
+if menu == "Início":
+    home_section()
+elif menu == "Projetos":
+    projects_section()
+elif menu == "Sobre":
+    about_section()
+else:
+    contact_section()
