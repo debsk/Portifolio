@@ -301,7 +301,6 @@ def home_section() -> None:
 
 def projects_section() -> None:
     st.markdown("## Projetos")
-    st.caption("Links diretos para seus projetos e entregas")
 
     cols = st.columns(2)
     for idx, project in enumerate(PROJECTS):
